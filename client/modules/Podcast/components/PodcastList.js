@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 // Import Components
-import PostListItem from './PostListItem/PostListItem';
+import PostListItem from './PodcastListItem/PodcastListItem';
 
 function PostList(props) {
   return (

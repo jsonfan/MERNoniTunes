@@ -133,7 +133,7 @@ Modules are the way of organising different domain-specific modules in the proje
       | - PostActions.spec.js
   | - components // Sub components of this module
       | - Post.js
-      | - PostList.js
+      | - PodcastList.js
       | - PostItem.js
       | - PostImage.js
   | - pages // React Router Pages from this module
@@ -144,7 +144,7 @@ Modules are the way of organising different domain-specific modules in the proje
           | - PostViewPage.js
           | - PostViewPage.css
   | - PodcastReducer.js
-  | - PostActions.js
+  | - PodcastActions.js
 ```
 
 ## Misc

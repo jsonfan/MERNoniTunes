@@ -1,7 +1,7 @@
 import test from 'ava';
 import { reducerTest } from 'redux-ava';
-import postReducer, { getPost, getPosts } from '../PostReducer';
-import { addPost, deletePost, addPosts } from '../PostActions';
+import postReducer, { getPost, getPosts } from '../PodcastReducer';
+import { addPost, deletePost, addPosts } from '../PodcastActions';
 
 test('action for ADD_POST is working', reducerTest(
   postReducer,

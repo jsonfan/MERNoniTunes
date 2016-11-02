@@ -2,16 +2,16 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 
 // Import Components
-import PostList from '../../components/PostList';
+import PostList from '../../components/PodcastList';
 import PostCreateWidget from '../../components/PostCreateWidget/PostCreateWidget';
 
 // Import Actions
-import { addPostRequest, fetchPosts, deletePostRequest, fetchCharts } from '../../PostActions';
+import { addPostRequest, fetchPosts, deletePostRequest, fetchCharts } from '../../PodcastActions';
 import { toggleAddPost } from '../../../App/AppActions';
 
 // Import Selectors
 import { getShowAddPost } from '../../../App/AppReducer';
-import { getCharts } from '../../PostReducer';
+import { getCharts } from '../../PodcastReducer';
 
 class PostListPage extends Component {
   componentDidMount() {
@@ -44,7 +44,7 @@ class PostListPage extends Component {
 }
 
 // Actions required to provide data for this component to render in sever side.
-// PostListPage.need = [() => { return fetchPosts(); }];
+// PodcastListPage.need = [() => { return fetchPosts(); }];
 PostListPage.need = [() => { return fetchCharts(); }];
 
 // Retrieve data from store as props
@@ -55,7 +55,7 @@ function mapStateToProps(state) {
   };
 }
 //
-// PostListPage.propTypes = {
+// PodcastListPage.propTypes = {
 //   posts: PropTypes.arrayOf(PropTypes.shape({
 //     name: PropTypes.string.isRequired,
 //     title: PropTypes.string.isRequired,

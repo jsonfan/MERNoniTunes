@@ -4,13 +4,13 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 // Import Style
-import styles from '../../components/PostListItem/PostListItem.css';
+import styles from '../../components/PodcastListItem/PostListItem.css';
 
 // Import Actions
-import { fetchPost } from '../../PostActions';
+import { fetchPost } from '../../PodcastActions';
 
 // Import Selectors
-import { getPost } from '../../PostReducer';
+import { getPost } from '../../PodcastReducer';
 
 export function PostDetailPage(props) {
   return (

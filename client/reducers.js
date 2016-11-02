@@ -5,8 +5,8 @@ import { combineReducers } from 'redux';
 
 // Import Reducers
 import app from './modules/App/AppReducer';
-import posts from './modules/Podcast/PostReducer';
-import podcasts from './modules/Podcast/PostReducer';
+import posts from './modules/Podcast/PodcastReducer';
+import podcasts from './modules/Podcast/PodcastReducer';
 import intl from './modules/Intl/IntlReducer';
 
 // Combine all reducers into one root reducer
