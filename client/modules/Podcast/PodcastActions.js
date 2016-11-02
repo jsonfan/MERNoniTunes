@@ -36,7 +36,7 @@ export const ADD_PODCASTS = 'ADD_PODCASTS';
 
 export function addPodcasts(podcasts) {
   console.log('addPodsies');
-  console.log('return to pl',podcasts);
+  // console.log('return to pl',podcasts);
   return {
     type: ADD_PODCASTS,
     podcasts,

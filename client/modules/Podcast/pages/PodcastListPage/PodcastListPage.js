@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 
 // Import Components
-import PostList from '../../components/PodcastList';
+import PodcastList from '../../components/PodcastList';
 import PostCreateWidget from '../../components/PostCreateWidget/PostCreateWidget';
 
 // Import Actions
@@ -31,10 +31,11 @@ class PostListPage extends Component {
   // };
 
   render() {
-    console.log('props',this.props);
+    // console.log('props',this.props);
     return (
       <div>
         <div> pod list here </div>
+        <PodcastList podcasts={this.props.podcasts} />
         {/*<PostCreateWidget addPost={this.handleAddPost} showAddPost={this.props.showAddPost} />*/}
         {/*<PostList handleDeletePost={this.handleDeletePost} posts={this.props.posts} />*/}
 

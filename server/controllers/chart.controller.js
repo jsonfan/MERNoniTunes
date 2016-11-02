@@ -12,7 +12,7 @@ export function getCharts(req, res) {
   console.log('hi');
   console.log('params' , req.params);
   var data = [];
-  req.params.limit = 100;
+  req.params.limit = 25;
   const ITUNES_CHARTS_RSS = `${ITUNES_CHARTS_RSS_ROOT}${req.params.limit}/xml`;
   parser.parseURL(ITUNES_CHARTS_RSS,(err, parsed) => {
     if (err) {
