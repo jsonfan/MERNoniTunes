@@ -34,6 +34,7 @@ import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 import posts from './routes/post.routes';
 import charts from './routes/chart.routes';
+import podcasts from './routes/podcast.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
 
@@ -58,8 +59,7 @@ app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../dist')));
 app.use('/api', posts);
 app.use('/api', charts);
-app.use(charts);
-app.use(posts);
+app.use('/api', podcasts);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {

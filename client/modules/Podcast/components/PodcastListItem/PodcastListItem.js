@@ -9,10 +9,11 @@ function PodcastListItem(props) {
   return (
     <div className={styles['single-post']}>
       <h3 className={styles['post-title']}>
-          {props.podcast.title}
-
+        {props.podcast.collectionName}
       </h3>
-      <hr className={styles.divider} />
+      <h4>{props.podcast.artistName}</h4>
+      <img className="podcast-image" src={props.podcast.artworkUrl600} />
+      link to lookup/ {props.podcast.collectionId}
     </div>
   );
 }

@@ -1,7 +1,4 @@
-import parser from 'rss-parser';
-
-const ITUNES_CHARTS_RSS_ROOT = "https://itunes.apple.com/us/rss/toppodcasts/limit=";
-
+import request from 'request-sync';
 /**
  * Get charts
  * @param req
@@ -9,19 +6,19 @@ const ITUNES_CHARTS_RSS_ROOT = "https://itunes.apple.com/us/rss/toppodcasts/limi
  * @returns void
  */
 export function getCharts(req, res) {
-  console.log('hi');
-  console.log('params' , req.params);
-  var data = [];
-  req.params.limit = 25;
-  const ITUNES_CHARTS_RSS = `${ITUNES_CHARTS_RSS_ROOT}${req.params.limit}/xml`;
-  parser.parseURL(ITUNES_CHARTS_RSS,(err, parsed) => {
-    if (err) {
-      res.status(500).send(err);
-    }
-    parsed.feed.entries.forEach((entry) => {
-      data.push(entry);
-    });
-    // console.log(data);
-    res.json(data);
+  const LIMIT = 15;
+  var response = request({method: 'GET', uri: `https://itunes.apple.com/us/rss/toppodcasts/limit=${LIMIT}/explicit=true/json`});
+  var result = JSON.parse(response.body);
+  var jsonResponse = [];
+  result.feed.entry.forEach((entry) => {
+    jsonResponse.push(
+      {
+        "collectionName"  : entry['im:name'].label,
+        "artistName"      : entry['im:artist'].label,
+        "artworkUrl600"   : entry['im:image'][2].label,
+        "collectionId"    : entry.id.attributes['im:id']
+      }
+    )
   });
+  res.json(jsonResponse);
 }

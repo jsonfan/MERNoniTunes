@@ -4,8 +4,8 @@ import { ADD_POST, ADD_POSTS, DELETE_POST, ADD_PODCASTS } from './PodcastActions
 const initialState = { data: [] };
 
 const PostReducer = (state = initialState, action) => {
-  console.log('post reducer');
-  console.log('am i here again');
+  // console.log('post reducer');
+  // console.log('am i here again');
   switch (action.type) {
     // case ADD_POST :
     //   return {
@@ -23,8 +23,6 @@ const PostReducer = (state = initialState, action) => {
     //     data: state.data.filter(post => post.cuid !== action.cuid),
     //   };
     case ADD_PODCASTS:
-      // console.log('reducer add pods', action.podcasts);
-      console.log(action);
       return {
         data: action.podcasts,
       };

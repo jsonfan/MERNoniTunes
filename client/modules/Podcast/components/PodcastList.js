@@ -4,14 +4,14 @@ import React, { PropTypes } from 'react';
 import PostListItem from './PodcastListItem/PodcastListItem';
 
 function PodcastList(props) {
-  console.log('propsheee',props);
+  // console.log('propsheee',props);
   return (
     <div className="listView">
       {
         props.podcasts.map(podcast => (
           <PostListItem
             podcast={podcast}
-            key={podcast.id._}
+            key = {podcast.collectionId}
           />
         ))
       }
