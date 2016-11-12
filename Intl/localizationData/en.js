@@ -1,7 +1,7 @@
 export default {
   locale: 'en',
   messages: {
-    siteTitle: 'PODCASTIC TEMPLATE!',
+    siteTitle: 'PODCASTIC!',
     addPost: 'Add Podcast',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',

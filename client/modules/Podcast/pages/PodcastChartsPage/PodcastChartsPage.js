@@ -13,7 +13,7 @@ import { toggleAddPost } from '../../../App/AppActions';
 import { getShowAddPost } from '../../../App/AppReducer';
 import { getCharts } from '../../PodcastReducer';
 
-class PostListPage extends Component {
+class PodcastChartsPage extends Component {
   componentDidMount() {
     // this.props.dispatch(fetchPosts());
     this.props.dispatch(fetchCharts());
@@ -34,7 +34,7 @@ class PostListPage extends Component {
     // console.log('props',this.props);
     return (
       <div>
-        <div> pod list here </div>
+        <div> Top 15 Podcasts </div>
         <PodcastList podcasts={this.props.podcasts} />
         {/*<PostCreateWidget addPost={this.handleAddPost} showAddPost={this.props.showAddPost} />*/}
         {/*<PostList handleDeletePost={this.handleDeletePost} posts={this.props.posts} />*/}
@@ -45,8 +45,8 @@ class PostListPage extends Component {
 }
 
 // Actions required to provide data for this component to render in sever side.
-// PodcastListPage.need = [() => { return fetchPosts(); }];
-PostListPage.need = [() => { return fetchCharts(); }];
+// PodcastChartsPage.need = [() => { return fetchPosts(); }];
+PodcastChartsPage.need = [() => { return fetchCharts(); }];
 
 // Retrieve data from store as props
 function mapStateToProps(state) {
@@ -56,7 +56,7 @@ function mapStateToProps(state) {
   };
 }
 //
-// PodcastListPage.propTypes = {
+// PodcastChartsPage.propTypes = {
 //   posts: PropTypes.arrayOf(PropTypes.shape({
 //     name: PropTypes.string.isRequired,
 //     title: PropTypes.string.isRequired,
@@ -66,8 +66,8 @@ function mapStateToProps(state) {
 //   dispatch: PropTypes.func.isRequired,
 // };
 
-PostListPage.contextTypes = {
+PodcastChartsPage.contextTypes = {
   router: React.PropTypes.object,
 };
 
-export default connect(mapStateToProps)(PostListPage);
+export default connect(mapStateToProps)(PodcastChartsPage);
