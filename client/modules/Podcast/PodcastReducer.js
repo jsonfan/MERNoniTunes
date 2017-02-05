@@ -23,6 +23,7 @@ const PostReducer = (state = initialState, action) => {
     //     data: state.data.filter(post => post.cuid !== action.cuid),
     //   };
     case ADD_PODCASTS:
+      // console.log('reducer add podcasts' , action.podcasts);
       return {
         data: action.podcasts,
       };
@@ -35,7 +36,7 @@ const PostReducer = (state = initialState, action) => {
 
 // Get all posts
 // export const getPosts = state => state.posts.data;
-export const getCharts = state => state.podcasts.data;
+export const getPodcasts = state => state.podcasts.data;
 // Get post by cuid
 export const getPost = (state, cuid) => state.posts.data.filter(post => post.cuid === cuid)[0];
 

@@ -17,3 +17,21 @@ export function getLookupDetailsFromId(req, res) {
     }
   );
 }
+
+export function getSearchResult(req, res) {
+  console.log('searching ' , req.params.terms);
+  searchitunes(
+    {
+      entity: 'podcast',
+      country: 'US',
+      term: req.params.terms,
+      limit: 100
+    }, (err, data) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.json(data.results);
+      }
+    }
+  );
+}

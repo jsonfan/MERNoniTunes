@@ -3,11 +3,11 @@ import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 
 // Import Style
-
+import styles from './PostListItem.css'
 
 function PodcastListItem(props) {
   return (
-    <div className="podcast-list-item">
+    <div className={styles['podcast-list-item']}>
       <img className="podcast-image" src={props.podcast.artworkUrl600} />
       <h3>
         {props.podcast.collectionName}

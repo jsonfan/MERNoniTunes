@@ -11,9 +11,9 @@ import { toggleAddPost } from '../../../App/AppActions';
 
 // Import Selectors
 import { getShowAddPost } from '../../../App/AppReducer';
-import { getCharts } from '../../PodcastReducer';
+import { getPodcasts } from '../../PodcastReducer';
 
-class PodcastChartsPage extends Component {
+class PodcastsListPage extends Component {
   componentDidMount() {
     // this.props.dispatch(fetchPosts());
     this.props.dispatch(fetchCharts());
@@ -45,18 +45,18 @@ class PodcastChartsPage extends Component {
 }
 
 // Actions required to provide data for this component to render in sever side.
-// PodcastChartsPage.need = [() => { return fetchPosts(); }];
-PodcastChartsPage.need = [() => { return fetchCharts(); }];
+// PodcastsListPage.need = [() => { return fetchPosts(); }];
+// PodcastsListPage.need = [() => { return fetchCharts(); }];
 
 // Retrieve data from store as props
 function mapStateToProps(state) {
   return {
     showAddPost: getShowAddPost(state),
-    podcasts: getCharts(state),
+    podcasts: getPodcasts(state),
   };
 }
 //
-// PodcastChartsPage.propTypes = {
+// PodcastsListPage.propTypes = {
 //   posts: PropTypes.arrayOf(PropTypes.shape({
 //     name: PropTypes.string.isRequired,
 //     title: PropTypes.string.isRequired,
@@ -66,8 +66,8 @@ function mapStateToProps(state) {
 //   dispatch: PropTypes.func.isRequired,
 // };
 
-PodcastChartsPage.contextTypes = {
+PodcastsListPage.contextTypes = {
   router: React.PropTypes.object,
 };
 
-export default connect(mapStateToProps)(PodcastChartsPage);
+export default connect(mapStateToProps)(PodcastsListPage);

@@ -36,7 +36,7 @@ export const GET_PODCAST = 'GET_PODCAST';
 // }
 
 export function addPodcasts(podcasts) {
-  console.log('addPodsies');
+  // console.log('addPodsies');
   // console.log('return to pl',podcasts);
   return {
     type: ADD_PODCASTS,
@@ -68,7 +68,8 @@ export function getPodcast(podcasts) {
 // }
 
 export function fetchCharts() {
-  console.log('fetching charts');
+  // console.log('fetching charts');
+  console.log('paction fetch charts');
   return (dispatch) => {
     return callApi('charts').then(res => {
       // console.log('fetcha char',res);
@@ -82,6 +83,16 @@ export function fetchPodcastByItunesId(iTunesId) {
   // return dispatch => {
   //   return callApi(`lookup/${iTunesId}`).then(res => dispatch(getPodcast(res)));
   // }
+}
+
+export function fetchPodcastSearchResults(terms) {
+  console.log('fetching pod search ' , terms);
+  return (dispatch) => {
+    return callApi(`search/${terms}`).then(res => {
+      console.log('action fetching ' , res);
+      dispatch(addPodcasts(res));
+    });
+  }
 }
 //
 // export function deletePost(cuid) {
