@@ -33,8 +33,8 @@ class PodcastsListPage extends Component {
   render() {
     // console.log('props',this.props);
     return (
-      <div>
-        <div> Top 15 Podcasts </div>
+      <div className="ui four column doubling stackable grid container">
+        <h3> Top 15 Podcasts </h3>
         <PodcastList podcasts={this.props.podcasts} />
         {/*<PostCreateWidget addPost={this.handleAddPost} showAddPost={this.props.showAddPost} />*/}
         {/*<PostList handleDeletePost={this.handleDeletePost} posts={this.props.posts} />*/}

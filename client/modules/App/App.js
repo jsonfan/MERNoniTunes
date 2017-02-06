@@ -54,7 +54,8 @@ export class App extends Component {
               },
             ]}
             link={[
-              {rel: "stylesheet", href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"}
+              {rel: "stylesheet", href: "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"},
+              {rel: "stylesheet", href: "//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"}
             ]}
           />
           {/*<Header*/}
@@ -74,6 +75,7 @@ export class App extends Component {
               <div className="ui text container">
                 <h1 className="ui inverted header">
                   Podcastic
+                  <i className="icon ion-mic-c"></i>
                 </h1>
                 <SearchBar />
               </div>
