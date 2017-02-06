@@ -6,7 +6,7 @@ import PostListItem from './PodcastListItem/PodcastListItem';
 function PodcastList(props) {
   // console.log('propsheee',props);
   return (
-    <div className="listView">
+    <div className="ui grid">
       {
         props.podcasts.map(podcast => (
           <PostListItem

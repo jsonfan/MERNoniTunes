@@ -6,7 +6,7 @@ import request from 'request-sync';
  * @returns void
  */
 export function getCharts(req, res) {
-  const LIMIT = 15;
+  const LIMIT = 12;
   console.log('getting chart response');
   var response = request({method: 'GET', uri: `https://itunes.apple.com/us/rss/toppodcasts/limit=${LIMIT}/explicit=true/json`});
   var result = JSON.parse(response.body);

@@ -7,13 +7,18 @@ import styles from './PostListItem.css'
 
 function PodcastListItem(props) {
   return (
-    <div className={styles['podcast-list-item']}>
-      <img className="podcast-image" src={props.podcast.artworkUrl600} />
-      <h3>
-        {props.podcast.collectionName}
-      </h3>
-      <h6>{props.podcast.artistName}</h6>
-
+    <div className="four wide column">
+      <div className="ui card">
+        <div className="image">
+          <img className="podcast-image" src={props.podcast.artworkUrl600} />
+        </div>
+        <div className="content">
+          <a className="header">{props.podcast.collectionName}</a>
+        </div>
+        <div className="description">
+          {props.podcast.artistName}
+        </div>
+      </div>
       link to lookup/ {props.podcast.collectionId}
     </div>
   );

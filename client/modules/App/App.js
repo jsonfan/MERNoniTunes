@@ -80,7 +80,7 @@ export class App extends Component {
                 <SearchBar />
               </div>
             </div>
-          <div>
+          <div className="ui vertical stripe segment">
             {this.props.children}
           </div>
 
