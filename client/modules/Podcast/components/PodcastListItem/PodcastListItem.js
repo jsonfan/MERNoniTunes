@@ -12,14 +12,7 @@ function PodcastListItem(props) {
         <div className="image">
           <img className="podcast-image" src={props.podcast.artworkUrl600} />
         </div>
-        <div className="content">
-          <a className="header">{props.podcast.collectionName}</a>
-        </div>
-        <div className="description">
-          {props.podcast.artistName}
-        </div>
       </div>
-      link to lookup/ {props.podcast.collectionId}
     </div>
   );
 }
