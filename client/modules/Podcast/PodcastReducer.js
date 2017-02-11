@@ -37,6 +37,7 @@ const PostReducer = (state = initialState, action) => {
 // Get all posts
 // export const getPosts = state => state.posts.data;
 export const getPodcasts = state => state.podcasts.data;
+export const getShowDetails = state => state.podcasts.showDetails;
 // Get post by cuid
 export const getPost = (state, cuid) => state.posts.data.filter(post => post.cuid === cuid)[0];
 
