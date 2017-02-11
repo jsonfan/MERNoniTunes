@@ -86,11 +86,11 @@ export function fetchPodcastByItunesId(iTunesId) {
 }
 
 export function fetchPodcastSearchResults(terms) {
-  console.log('fetching pod search ' , terms);
+  console.log('fetching pod search resulst ' , terms);
   return (dispatch) => {
-    return callApi(`search/${terms}`).then(res => {
+    return callApi('`search/${terms}`').then(res => {
       console.log('action fetching ' , res);
-      dispatch(addPodcasts(res));
+      // dispatch(addPodcasts(res));
     });
   }
 }

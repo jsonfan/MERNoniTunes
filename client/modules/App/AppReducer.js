@@ -28,6 +28,7 @@ const AppReducer = (state = initialState, action) => {
 // Get showAddPost
 export const getShowAddPost = state => state.app.showAddPost;
 export const getPodcasts = state => state.app.podcasts;
+export const getShowDetails = state => state.app.showDetails;
 
 // Export Reducer
 export default AppReducer;

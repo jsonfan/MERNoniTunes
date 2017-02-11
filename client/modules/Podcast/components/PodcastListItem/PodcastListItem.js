@@ -9,9 +9,9 @@ function PodcastListItem(props) {
   return (
     <div className="four wide column">
       <div className="ui card">
-        <div className="image">
+        <Link to={`/show/${props.podcast.collectionId}`} className="image">
           <img className="podcast-image" src={props.podcast.artworkUrl600} />
-        </div>
+        </Link>
       </div>
     </div>
   );

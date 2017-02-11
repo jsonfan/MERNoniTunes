@@ -34,7 +34,7 @@ class SearchResultsPage extends Component {
     // console.log('props',this.props);
     return (
       <div>
-        <div> Top 15 Podcasts </div>
+        <div> search results page </div>
         <PodcastList podcasts={this.props.podcasts} />
         {/*<PostCreateWidget addPost={this.handleAddPost} showAddPost={this.props.showAddPost} />*/}
         {/*<PostList handleDeletePost={this.handleDeletePost} posts={this.props.posts} />*/}

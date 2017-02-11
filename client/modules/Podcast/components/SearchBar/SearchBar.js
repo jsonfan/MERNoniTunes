@@ -7,6 +7,12 @@ import { getPodcasts } from '../../PodcastReducer';
 //import style
 
 export class SearchBar extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.handleOnKeyPress = this.handleOnKeyPress.bind(this);
+  // }
+
+
   onFormSubmit(event) {
     console.log('submitted');
     console.log('do search action here');
@@ -17,7 +23,21 @@ export class SearchBar extends Component {
   }
 
   onInputChange(term) {
-    this.props.onTermChange(term);
+    // console.log(term);
+    // this.props.onTermChange(term);
+  }
+
+  handleOnKeyPress(e) {
+    if (e.charCode === 13 ) {
+      // const { dispatch } = this.props;
+      const value = e.target.value.trim();
+
+      if (value !== '') {
+        console.log('entered ' + value);
+        // navigate to search results page
+        fetchPodcastSearchResults(value);
+      }
+    }
   }
 
 
@@ -28,6 +48,7 @@ export class SearchBar extends Component {
             placeholder="politics, sports, stories"
             className="form-control"
             onChange={event => this.onInputChange(event.target.value)}
+            onKeyPress={this.handleOnKeyPress}
           />
           <i className="search icon"></i>
       </div>

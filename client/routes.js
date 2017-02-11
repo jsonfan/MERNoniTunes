@@ -33,7 +33,7 @@ export default (
       }}
     />
     <Route
-      path="/posts/:slug-:cuid"
+      path="/show/:collectionId"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
           cb(null, require('./modules/Podcast/pages/PodcastDetailPage/PodcastDetailPage').default);

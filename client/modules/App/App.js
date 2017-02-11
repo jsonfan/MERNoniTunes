@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router';
 // Import Style
 // import styles from './App.css';
 
@@ -74,8 +74,10 @@ export class App extends Component {
               </div>
               <div className="ui text container">
                 <h1 className="ui inverted header">
-                  Podcastic
-                  <i className="icon ion-mic-c"></i>
+                  <Link to="/">
+                    Podcastic
+                    <i className="icon ion-mic-c"></i>
+                  </Link>
                 </h1>
                 <SearchBar />
               </div>
