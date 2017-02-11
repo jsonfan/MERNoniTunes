@@ -21,7 +21,7 @@ const AppReducer = (state = initialState, action) => {
     case GET_SHOW_DETAILS:
       console.log('app reducer show details' , action);
       return {
-        podcasts: action.showDetails,
+        showDetails: action.showDetails,
       };
     default:
       return state;

@@ -1,4 +1,4 @@
-import { ADD_POST, ADD_POSTS, DELETE_POST, ADD_PODCASTS, GET_SHOW_DETAILS } from './PodcastActions';
+import { ADD_POST, ADD_POSTS, DELETE_POST, ADD_PODCASTS } from './PodcastActions';
 
 // Initial State
 const initialState = { data: [] };
@@ -22,11 +22,6 @@ const PostReducer = (state = initialState, action) => {
     //   return {
     //     data: state.data.filter(post => post.cuid !== action.cuid),
     //   };
-    case GET_SHOW_DETAILS :
-      console.log('reducer get show details ' , action);
-      return {
-        data: action.showDetails
-      };
     case ADD_PODCASTS:
       console.log('reducer add podcasts' , action.podcasts);
       return {
@@ -42,7 +37,7 @@ const PostReducer = (state = initialState, action) => {
 // Get all posts
 // export const getPosts = state => state.posts.data;
 export const getPodcasts = state => state.podcasts.data;
-export const getShowDetails = state => state.podcasts.data;
+// export const getShowDetails = state => state.podcasts.showDetails;
 // Get post by cuid
 export const getPost = (state, cuid) => state.posts.data.filter(post => post.cuid === cuid)[0];
 

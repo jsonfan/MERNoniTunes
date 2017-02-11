@@ -10,7 +10,7 @@ import { FormattedMessage } from 'react-intl';
 import { fetchPodcastByItunesId } from '../../PodcastActions';
 
 // Import Selectors
-import { getShowDetails } from '../../PodcastReducer';
+import { getShowDetails } from '../../ShowDetailsReducer';
 
 class PodcastDetailPage extends Component {
 
@@ -24,7 +24,6 @@ class PodcastDetailPage extends Component {
 
     return (
       <div>
-
         <div className="ui divided items">
           <div className="item">
             <div className="image">
@@ -45,6 +44,8 @@ class PodcastDetailPage extends Component {
             </div>
           </div>
         </div>
+
+
 
         <div className="ui middle aligned divided list">
           <div className="item">
