@@ -6,6 +6,7 @@ import callApi from '../../util/apiCaller';
 // export const DELETE_POST = 'DELETE_POST';
 export const ADD_PODCASTS = 'ADD_PODCASTS';
 export const GET_PODCAST = 'GET_PODCAST';
+export const GET_SHOW_DETAILS = 'GET_SHOW_DETAILS';
 
 // // Export Actions
 // export function addPost(post) {
@@ -52,6 +53,14 @@ export function getPodcast(podcasts) {
     podcast,
   };
 }
+export function getShowDetails(showDetails) {
+  console.log('addPodsies');
+  // console.log('return to pl',podcasts);
+  return {
+    type: GET_SHOW_DETAILS,
+    showDetails,
+  };
+}
 
 // export function fetchPosts() {
 //   return (dispatch) => {
@@ -80,9 +89,9 @@ export function fetchCharts() {
 
 export function fetchPodcastByItunesId(iTunesId) {
   console.log('fetching podcast by itunes id', iTunesId);
-  // return dispatch => {
-  //   return callApi(`lookup/${iTunesId}`).then(res => dispatch(getPodcast(res)));
-  // }
+  return dispatch => {
+    return callApi(`lookup/${iTunesId}`).then(res => dispatch(getShowDetails(res)));
+  }
 }
 
 export function fetchPodcastSearchResults(terms) {

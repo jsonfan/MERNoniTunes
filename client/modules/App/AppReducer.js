@@ -1,6 +1,6 @@
 // Import Actions
 import { TOGGLE_ADD_POST } from './AppActions';
-import { ADD_PODCASTS } from '../Podcast/PodcastActions';
+import { ADD_PODCASTS, GET_SHOW_DETAILS } from '../Podcast/PodcastActions';
 // Initial State
 const initialState = {
   // podcasts: [],
@@ -17,6 +17,11 @@ const AppReducer = (state = initialState, action) => {
       // console.log('reducer add podcasts' , action.podcasts);
       return {
         podcasts: action.podcasts,
+      };
+    case GET_SHOW_DETAILS:
+      console.log('app reducer show details' , action);
+      return {
+        podcasts: action.showDetails,
       };
     default:
       return state;
