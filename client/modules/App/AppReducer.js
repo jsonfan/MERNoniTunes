@@ -9,7 +9,6 @@ const initialState = {
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PODCASTS:
-      // console.log('reducer add podcasts' , action.podcasts);
       return {
         podcasts: action.podcasts,
       };

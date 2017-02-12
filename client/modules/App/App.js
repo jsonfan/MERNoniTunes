@@ -1,14 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-// Import Style
-// import styles from './App.css';
 
 // Import Components
 import Helmet from 'react-helmet';
 import DevTools from './components/DevTools';
-// import Header from './components/Header/Header';
-// import Footer from './components/Footer/Footer';
 import Sidebar from './components/Sidebar/Sidebar';
 import SearchBar from '../Podcast/components/SearchBar/SearchBar';
 // Import Actions
@@ -26,13 +22,7 @@ export class App extends Component {
 
   componentDidMount() {
     this.setState({isMounted: true}); // eslint-disable-line
-    // this.props.dispatch(fetchCharts());
-    console.log('app props ' , this.props);
   }
-
-  // toggleAddPostSection = () => {
-  //   this.props.dispatch(toggleAddPost());
-  // };
 
   render() {
     return (
@@ -58,11 +48,6 @@ export class App extends Component {
               {rel: "stylesheet", href: "//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"}
             ]}
           />
-          {/*<Header*/}
-            {/*switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}*/}
-            {/*intl={this.props.intl}*/}
-            {/*toggleAddPost={this.toggleAddPostSection}*/}
-          {/*/>*/}
           <div className="ui inverted vertical masthead center aligned segment">
               <div className="ui container">
                 <div className="ui large secondary inverted pointing menu">
@@ -85,8 +70,6 @@ export class App extends Component {
           <div className="ui vertical stripe segment">
             {this.props.children}
           </div>
-
-          {/*<Footer />*/}
         </div>
       </div>
     );
@@ -102,7 +85,6 @@ App.propTypes = {
 // Retrieve data from store as props
 function mapStateToProps(store) {
   return {
-    // podcasts: getPodcasts(store),
     intl: store.intl,
   };
 }

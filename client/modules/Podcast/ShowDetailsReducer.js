@@ -19,6 +19,5 @@ const ShowDetailsReducer = (state = initialState, action) => {
 /* Selectors */
 export const getShowDetails = state => state.showDetails.data;
 
-
 // Export Reducer
 export default ShowDetailsReducer;

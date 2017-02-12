@@ -17,7 +17,6 @@ const PostReducer = (state = initialState, action) => {
 };
 
 /* Selectors */
-
 // Get all posts
 export const getPodcasts = state => state.podcasts.data;
 

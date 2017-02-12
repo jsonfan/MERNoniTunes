@@ -17,8 +17,6 @@ export class SearchBar extends Component {
       const value = e.target.value.trim();
 
       if (value !== '') {
-        console.log('entered ' + value);
-        // navigate to search results page
         this.props.fetchPodcastSearchResults(value);
       }
     }

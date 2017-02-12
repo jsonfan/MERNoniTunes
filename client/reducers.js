@@ -13,7 +13,6 @@ import showDetails from './modules/Podcast/ShowDetailsReducer';
 // Combine all reducers into one root reducer
 export default combineReducers({
   app,
-  // posts,
   showDetails,
   podcasts,
   intl,
