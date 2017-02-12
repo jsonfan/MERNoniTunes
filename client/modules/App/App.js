@@ -5,7 +5,6 @@ import { Link } from 'react-router';
 // Import Components
 import Helmet from 'react-helmet';
 import DevTools from './components/DevTools';
-import Sidebar from './components/Sidebar/Sidebar';
 import SearchBar from '../Podcast/components/SearchBar/SearchBar';
 // Import Actions
 import { toggleAddPost } from './AppActions';

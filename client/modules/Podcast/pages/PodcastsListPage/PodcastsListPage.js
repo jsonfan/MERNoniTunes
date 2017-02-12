@@ -12,7 +12,9 @@ import { getPodcasts } from '../../PodcastReducer';
 
 class PodcastsListPage extends Component {
   componentDidMount() {
-    this.props.dispatch(fetchCharts());
+    if (!this.props.podcasts) {
+      this.props.dispatch(fetchCharts());
+    }
   }
 
   render() {
