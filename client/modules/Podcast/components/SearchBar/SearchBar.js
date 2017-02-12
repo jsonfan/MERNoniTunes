@@ -1,26 +1,28 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import {fetchPodcastSearchResults} from '../../PodcastActions';
 import { getPodcasts } from '../../PodcastReducer';
 //import style
 
 export class SearchBar extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.handleOnKeyPress = this.handleOnKeyPress.bind(this);
-  // }
-
-
-  onFormSubmit(event) {
-    console.log('submitted');
-    console.log('do search action here');
-    event.preventDefault();
-    fetchPodcastSearchResults('nba');
-    // this.props.fetch
-    // this.props.dispatch(fetchPodcastSearchResults('nba'));
+  constructor(props) {
+    super(props);
+    this.handleOnKeyPress = this.handleOnKeyPress.bind(this);
   }
+
+
+  // onFormSubmit(event) {
+  //   console.log('submitted');
+  //   console.log('do search action here');
+  //
+  //   this.props.fetchPodcastSearchResults('nba');
+  //   event.preventDefault();
+  //   // this.props.fetch
+  //   // this.props.dispatch(fetchPodcastSearchResults('nba'));
+  // }
 
   onInputChange(term) {
     // console.log(term);
@@ -35,7 +37,7 @@ export class SearchBar extends Component {
       if (value !== '') {
         console.log('entered ' + value);
         // navigate to search results page
-        fetchPodcastSearchResults(value);
+        this.props.fetchPodcastSearchResults(value);
       }
     }
   }
@@ -58,10 +60,8 @@ export class SearchBar extends Component {
 
 
 // Retrieve data from store as props
-function mapStateToProps(state) {
-  return {
-    podcasts: getPodcasts(state),
-  };
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchPodcastSearchResults }, dispatch);
 }
 
-export default connect(mapStateToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar)
