@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 import PostListItem from './PodcastListItem/PodcastListItem';
 
 function PodcastList(props) {
-  // console.log('propsheee',props);
+  
   return (
     <div className="ui grid">
       {
@@ -18,16 +18,5 @@ function PodcastList(props) {
     </div>
   );
 }
-
-// PodcastList.propTypes = {
-//   posts: PropTypes.arrayOf(PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     title: PropTypes.string.isRequired,
-//     content: PropTypes.string.isRequired,
-//     slug: PropTypes.string.isRequired,
-//     cuid: PropTypes.string.isRequired,
-//   })).isRequired,
-//   handleDeletePost: PropTypes.func.isRequired,
-// };
 
 export default PodcastList;

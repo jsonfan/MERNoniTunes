@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 
 import {fetchPodcastSearchResults} from '../../PodcastActions';
 import { getPodcasts } from '../../PodcastReducer';
-//import style
 
 export class SearchBar extends Component {
   constructor(props) {
@@ -13,25 +12,8 @@ export class SearchBar extends Component {
     this.handleOnKeyPress = this.handleOnKeyPress.bind(this);
   }
 
-
-  // onFormSubmit(event) {
-  //   console.log('submitted');
-  //   console.log('do search action here');
-  //
-  //   this.props.fetchPodcastSearchResults('nba');
-  //   event.preventDefault();
-  //   // this.props.fetch
-  //   // this.props.dispatch(fetchPodcastSearchResults('nba'));
-  // }
-
-  onInputChange(term) {
-    // console.log(term);
-    // this.props.onTermChange(term);
-  }
-
   handleOnKeyPress(e) {
     if (e.charCode === 13 ) {
-      // const { dispatch } = this.props;
       const value = e.target.value.trim();
 
       if (value !== '') {
@@ -49,7 +31,6 @@ export class SearchBar extends Component {
           <input
             placeholder="politics, sports, stories"
             className="form-control"
-            onChange={event => this.onInputChange(event.target.value)}
             onKeyPress={this.handleOnKeyPress}
           />
           <i className="search icon"></i>

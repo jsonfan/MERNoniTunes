@@ -6,8 +6,6 @@ export const GET_PODCAST = 'GET_PODCAST';
 export const GET_SHOW_DETAILS = 'GET_SHOW_DETAILS';
 
 export function addPodcasts(podcasts) {
-  // console.log('addPodsies');
-  // console.log('return to pl',podcasts);
   return {
     type: ADD_PODCASTS,
     podcasts,
@@ -15,16 +13,12 @@ export function addPodcasts(podcasts) {
 }
 
 export function getPodcast(podcasts) {
-  console.log('addPodsies');
-  // console.log('return to pl',podcasts);
   return {
     type: GET_PODCAST,
     podcast,
   };
 }
 export function getShowDetails(showDetails) {
-  console.log('addPodsies');
-  // console.log('return to pl',podcasts);
   return {
     type: GET_SHOW_DETAILS,
     showDetails,
@@ -32,11 +26,8 @@ export function getShowDetails(showDetails) {
 }
 
 export function fetchCharts() {
-  // console.log('fetching charts');
-  console.log('paction fetch charts');
   return (dispatch) => {
     return callApi('charts').then(res => {
-      // console.log('fetcha char',res);
       dispatch(addPodcasts(res));
     });
   }

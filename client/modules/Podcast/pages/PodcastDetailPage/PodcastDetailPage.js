@@ -3,9 +3,6 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
-// Import Style
-// import styles from '../../components/PodcastListItem/PostListItem.css';
-
 // Import Actions
 import { fetchPodcastByItunesId } from '../../PodcastActions';
 
@@ -15,7 +12,6 @@ import { getShowDetails } from '../../ShowDetailsReducer';
 class PodcastDetailPage extends Component {
 
   componentDidMount() {
-    // console.log('component did mount ' , this.props.params.collectionId);
     this.props.dispatch(fetchPodcastByItunesId(this.props.params.collectionId));
   }
 
@@ -63,11 +59,6 @@ class PodcastDetailPage extends Component {
     );
   }
 }
-
-// Actions required to provide data for this component to render in sever side.
-// PodcastDetailPage.need = [params => {
-//   return fetchPodcastByItunesId(params.collectionId);
-// }];
 
 // Retrieve data from store as props
 function mapStateToProps(state, props) {
