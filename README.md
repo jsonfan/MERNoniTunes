@@ -1,6 +1,9 @@
 # Podcast Search
 Trying to learn mern.io's framework by implementing iTunes Search API
 
+![Landing page](https://raw.githubusercontent.com/jsonfan/MERNoniTunes/master/mainpage.png)
+
+
 ## Quickstart
 
 ```
