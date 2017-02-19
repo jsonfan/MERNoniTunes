@@ -4,11 +4,11 @@ import { FormattedMessage } from 'react-intl';
 
 function EpisodeListItem(props) {
   return (
-    <div className="four wide column">
-      {props.episode.title}
-      {props.episode.description}
-      {props.episode.enclosures[0].url}
-    </div>
+    <tr>
+      <td>{props.episode.title}</td>
+      <td>{props.episode.description}</td>
+      <td>{props.episode.enclosures[0].url} <i className="ion-play"></i></td>
+    </tr>
   );
 }
 

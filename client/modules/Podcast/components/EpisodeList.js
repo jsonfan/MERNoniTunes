@@ -18,21 +18,31 @@ class EpisodeList extends Component {
 
   render () {
     console.log('episode list' , this.props);
-
+    const episodes = this.props.episodes.items ? this.props.episodes.items : null;
 
     return (
-      <div className="ui grid">
-        {this.props.feedUrl}
-        { this.props.episodes.items ?
-          this.props.episodes.items.map(episode => (
-            <EpisodeListItem
-              episode={episode}
-              key={episode.created}
-            />
-          ))
-          : null
-        }
-      </div>
+      <table className="ui collapsing table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            episodes ? episodes.map (episode => (
+              <EpisodeListItem
+                episode={episode}
+                key={episode.created}
+              />
+            ))
+            : <i className="notched circle loading icon"></i>
+          }
+        </tbody>
+      </table>
+
+
     );
   }
 }

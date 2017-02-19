@@ -22,8 +22,7 @@ export class SearchBar extends Component {
       }
     }
   }
-
-
+  
   render() {
     return (
       <div className="ui big fluid icon input">

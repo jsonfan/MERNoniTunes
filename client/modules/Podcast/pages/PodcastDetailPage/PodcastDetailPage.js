@@ -22,7 +22,7 @@ class PodcastDetailPage extends Component {
     const showDetails = this.props.showDetails;
 
     return (
-      <div>
+      <div className="ui container">
         <div className="ui divided items">
           <div className="item">
             <div className="image">
@@ -33,34 +33,17 @@ class PodcastDetailPage extends Component {
               <div className="meta">
                 <span className="cinema">{showDetails.artistName}</span>
               </div>
-              <div className="description">
-                <p>{showDetails.feedUrl}</p>
-              </div>
               <div className="extra">
                 <div className="ui label">{showDetails.trackExplicitness}</div>
-                <div className="ui label"><i className="globe icon"></i> Additional Languages</div>
               </div>
             </div>
           </div>
         </div>
-
-
-
-        <div className="ui middle aligned divided list">
-          <div className="item">
-            <div className="right floated content">
-              <div className="ui button">Play</div>
-            </div>
-            <img className="ui avatar image" src="http://is5.mzstatic.com/image/thumb/Podcasts122/v4/37/9d/b6/379db6f4-629b-7869-ab40-531fa56532ce/mza_6120789080010223365.jpeg/170x170bb-85.jpg" />
-            <div className="content">
-              Lena
-            </div>
-          </div>
-        </div>
-
-        { showDetails.feedUrl ? <EpisodeList feedUrl={showDetails.feedUrl} /> : null }
-
-
+        { showDetails.feedUrl ?
+          <EpisodeList feedUrl={showDetails.feedUrl} />
+          :
+          <i className="notched circle loading icon"></i>
+        }
       </div>
     );
   }
