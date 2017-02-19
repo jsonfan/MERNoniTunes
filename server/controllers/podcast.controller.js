@@ -1,4 +1,5 @@
 import searchitunes from 'searchitunes';
+import Feed from 'rss-to-json';
 /**
  * Get lookup details
  * @param req
@@ -34,4 +35,15 @@ export function getSearchResult(req, res) {
       }
     }
   );
+}
+
+export function getEpisodes(req, res) {
+  console.log('getting rss feed ' ,req.params[0]);
+  Feed.load(req.params[0], function(err, rss){
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.json(rss);
+    }
+  });
 }

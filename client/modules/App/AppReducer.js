@@ -1,5 +1,5 @@
 // Import Actions
-import { ADD_PODCASTS, GET_SHOW_DETAILS } from '../Podcast/PodcastActions';
+import { ADD_PODCASTS, GET_SHOW_DETAILS, GET_EPISODES } from '../Podcast/PodcastActions';
 // Initial State
 const initialState = {
   // podcasts: [],
@@ -17,6 +17,11 @@ const AppReducer = (state = initialState, action) => {
       return {
         showDetails: action.showDetails,
       };
+    case GET_EPISODES:
+    console.log('app reducer episodes' , action);
+      return {
+        episodes: action.episodes,
+      };
     default:
       return state;
   }
@@ -27,6 +32,6 @@ const AppReducer = (state = initialState, action) => {
 // Get showAddPost
 export const getPodcasts = state => state.app.podcasts;
 export const getShowDetails = state => state.app.showDetails;
-
+export const getEpisodes = state => state.app.episodes;
 // Export Reducer
 export default AppReducer;

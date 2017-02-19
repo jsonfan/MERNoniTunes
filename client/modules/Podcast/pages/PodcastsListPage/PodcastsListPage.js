@@ -5,14 +5,19 @@ import { connect } from 'react-redux';
 import PodcastList from '../../components/PodcastList';
 
 // Import Actions
-import { addPostRequest, fetchPosts, deletePostRequest, fetchCharts } from '../../PodcastActions';
+import { fetchCharts } from '../../PodcastActions';
 
 // Import Selectors
 import { getPodcasts } from '../../PodcastReducer';
 
 class PodcastsListPage extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+
   componentDidMount() {
-    if (!this.props.podcasts) {
+    if (this.props.podcasts.length === 0) {
       this.props.dispatch(fetchCharts());
     }
   }

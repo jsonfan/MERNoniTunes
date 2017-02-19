@@ -4,6 +4,7 @@ import callApi from '../../util/apiCaller';
 export const ADD_PODCASTS = 'ADD_PODCASTS';
 export const GET_PODCAST = 'GET_PODCAST';
 export const GET_SHOW_DETAILS = 'GET_SHOW_DETAILS';
+export const GET_EPISODES = 'GET_EPISODES';
 
 export function addPodcasts(podcasts) {
   return {
@@ -25,6 +26,13 @@ export function getShowDetails(showDetails) {
   };
 }
 
+export function getEpisodes(episodes) {
+  return {
+    type: GET_EPISODES,
+    episodes,
+  };
+}
+
 export function fetchCharts() {
   return (dispatch) => {
     return callApi('charts').then(res => {
@@ -37,6 +45,13 @@ export function fetchPodcastByItunesId(iTunesId) {
   console.log('fetching podcast by itunes id', iTunesId);
   return dispatch => {
     return callApi(`lookup/${iTunesId}`).then(res => dispatch(getShowDetails(res)));
+  }
+}
+
+export function fetchEpisodes(feedUrl) {
+  console.log('fetching episodes by feed url' , feedUrl);
+  return dispatch => {
+    return callApi(`episodes/${feedUrl}`).then(res => dispatch(getEpisodes(res)));
   }
 }
 

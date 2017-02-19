@@ -18,6 +18,7 @@ export class SearchBar extends Component {
 
       if (value !== '') {
         this.props.fetchPodcastSearchResults(value);
+        this.context.router.push('/');
       }
     }
   }
@@ -36,6 +37,10 @@ export class SearchBar extends Component {
     )
   }
 }
+
+SearchBar.contextTypes = {
+  router: React.PropTypes.object,
+};
 
 
 // Retrieve data from store as props

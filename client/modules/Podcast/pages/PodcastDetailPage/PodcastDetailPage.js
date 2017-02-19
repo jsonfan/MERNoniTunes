@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
+// Import Components
+import EpisodeList from '../../components/EpisodeList';
+
 // Import Actions
 import { fetchPodcastByItunesId } from '../../PodcastActions';
 
@@ -31,7 +34,7 @@ class PodcastDetailPage extends Component {
                 <span className="cinema">{showDetails.artistName}</span>
               </div>
               <div className="description">
-                <p></p>
+                <p>{showDetails.feedUrl}</p>
               </div>
               <div className="extra">
                 <div className="ui label">{showDetails.trackExplicitness}</div>
@@ -54,6 +57,9 @@ class PodcastDetailPage extends Component {
             </div>
           </div>
         </div>
+
+        { showDetails.feedUrl ? <EpisodeList feedUrl={showDetails.feedUrl} /> : null }
+
 
       </div>
     );
